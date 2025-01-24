@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'cera_proregular';
+    src: url('../fonts/cera_pro_regular-webfont.eot');
+    src: url('../fonts/cera_pro_regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/cera_pro_regular-webfont.woff2') format('woff2'),
+    url('../fonts/cera_pro_regular-webfont.woff') format('woff'),
+    url('../fonts/cera_pro_regular-webfont.ttf') format('truetype'),
+    url('../fonts/cera_pro_regular-webfont.svg#cera_proregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 * {
     padding: 0;
     margin: 0;
@@ -25,7 +38,7 @@ header nav ul {
 }
 
 header nav ul li a{
-    --font-family: "Cera Pro", sans-serif;
+    font-family: 'cera_proregular';
     font-weight: 400;
     font-size: 16px;
     color: #3d3d3d;
@@ -41,7 +54,7 @@ header .login{
     display: flex;
     align-items: center;
     text-decoration: none;
-    --font-family: "Cera Pro", sans-serif;
+    font-family: 'cera_proregular';
     font-weight: 500;
     font-size: 16px;
     color: #fff;
@@ -70,7 +83,7 @@ header .login:hover svg path{
     background: #F5F5F5;
 }
 .banner article h3{
-    --font-family: "Cera Pro", sans-serif;
+    font-family: 'cera_proregular';
     font-weight: 500;
     font-size: 14px;
     line-height: 114%;
@@ -81,7 +94,7 @@ header .login:hover svg path{
 
 .banner article h1{
     margin: 0;
-    --font-family: "Cera Pro", sans-serif;
+    font-family: 'cera_proregular';
     font-weight: 900;
     font-size: 70px;
     line-height: 100%;
@@ -94,7 +107,7 @@ header .login:hover svg path{
     color: #46a358;
 }
 .banner article p{
-    --font-family: "Cera Pro", sans-serif;
+    font-family: 'cera_proregular';
     font-weight: 400;
     font-size: 14px;
     line-height: 171%;
@@ -104,7 +117,7 @@ header .login:hover svg path{
 .banner article .btn{
     padding: 11px 26px;
     text-decoration: none;
-    --font-family: "Cera Pro", sans-serif;
+    font-family: 'cera_proregular';
     font-weight: 700;
     font-size: 16px;
     line-height: 125%;
