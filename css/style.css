@@ -75,19 +75,21 @@ header .login:hover svg path{
 
 .banner{
     margin-bottom: 26px;
+
 }
 
 .banner .container-banner {
     max-width: 1200px;
     margin: auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    background: #F5F5F5;
+
 }
 .banner article{
-    padding: 68px 53px;
+    padding-left: 41px;
     max-width: 557px;
-    background: #F5F5F5;
 }
 .banner article h3{
     font-family: 'cera_proregular';
@@ -214,15 +216,20 @@ a,p{
     font-size: 18px;
     line-height: 89%;
     color: #3d3d3d;
-    margin-bottom: 7px;
+    margin-bottom: 25px;
 }
 .categories img{
     height:470px;
 }
 .categories-list{
     list-style: none;
-
+    margin-left: 15px;
 }
+
+.categories-list li{
+    margin-bottom: 25px;
+}
+
 
 .categories-list li a:hover{
     color: #46a358;
@@ -349,6 +356,10 @@ p{
     align-items: center;
     column-gap:2px;
 }
+.container-promotion .button:hover{
+    background: white;
+    color: #46a358;
+}
 
 
 .container-promotion a{
@@ -381,8 +392,8 @@ p{
     margin-top: 5px;
 }
 
-.blog-post .button:hover a, svg{
-    color: #46A358;
+.blog-post .button:hover{
+    color: #46a358;
 }
 
 .blog-post .button a{
