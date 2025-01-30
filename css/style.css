@@ -153,6 +153,7 @@ header .login:hover svg path{
     display:flex;
     max-width: 1200px;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 50px;
     margin-bottom: 219px;
 }
@@ -241,13 +242,63 @@ a,p{
     flex-wrap: wrap;
     row-gap: 70px;
     width: 840px;
-    height: 100%;
 }
 
 .product {
     width: 258px;
     display: flex;
     flex-direction: column;
+    border-top: 1px solid transparent;
+    position: relative;
+
+}
+
+.product-icons{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 245px;
+    left: 70px;
+}
+
+.product-icons ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap:27px;
+    transition: 0.4s;
+}
+.product-icons ul li a:hover svg path{
+    cursor: pointer;
+    stroke: #46a358;
+    transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+
+
+.discount-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 29px;
+    background: #46a358;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+.discount-info p{
+    font-family: 'cera_proregular';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: #fff;
+}
+
+
+.product:hover{
+    border-top: 1px solid #46a358;
 }
 
 
@@ -261,6 +312,7 @@ a,p{
 
 .product-name{
     margin:0;
+    text-align: start;
 }
 
 .product-info .price{
@@ -270,6 +322,7 @@ a,p{
     line-height: 89%;
     color: #46a358;
     margin:0;
+    text-align: start;
 }
 
 h2{
@@ -409,6 +462,48 @@ p{
 }
 .blog-post h2{
     text-align: start;
+}
+
+.pagination-container{
+    max-width: 1200px;
+    margin-left: auto;
+}
+.pagination{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.pagination li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    width: 35px;
+    height: 35px;
+    transition: 0.4s;
+}
+
+.pagination li:hover{
+    background: #46a358;
+    cursor: pointer;
+}
+
+.pagination li:hover a{
+    color: white;
+}
+.pagination li:hover .icon path {
+    stroke: white;
+    transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+.pagination a{
+    font-family: 'cera_proregular';
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 89%;
+    color: #3d3d3d;
 }
 
 
