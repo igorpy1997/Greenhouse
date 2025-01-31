@@ -253,8 +253,12 @@ a,p{
 
 }
 
-.product-icons{
+.product:hover .product-icons {
     display: flex;
+}
+
+.product-icons{
+    display: none;
     justify-content: space-between;
     position: absolute;
     top: 245px;
@@ -440,7 +444,7 @@ p{
 }
 .blog-post .button{
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     margin-top: 5px;
 }
