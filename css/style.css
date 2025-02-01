@@ -42,7 +42,105 @@ header nav ul li a{
     font-size: 16px;
     color: #3d3d3d;
     text-decoration: none;
+    position: relative;
 }
+
+header nav ul li a:before{
+    content: '';
+    display: block;
+    background: #46A358;
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: -25px;
+    transition: 0.4s;
+}
+
+header nav ul li a:hover:before{
+    width: 100%;
+}
+
+header nav ul li a:hover{
+    color: #46A358;
+}
+header nav ul li{
+    position: relative;
+}
+header nav ul li .dropdown{
+    display: none;
+    list-style: none;
+    position: absolute;
+    top: 10px;
+    padding-top: 30px;
+    left: -50px;
+}
+
+header nav ul li .dropdown a:before{
+    display: none;
+}
+
+header nav ul li .dropdown a{
+    padding: 8px 14px;
+    min-width: 188px;
+    display: inline-block;
+    background: #edf6ee;
+    font-family: 'cera_proregular';
+    font-weight: 400;
+    font-size: 16px;
+    color: #3d3d3d;
+    line-height: 20px;
+    transition: 0.3s;
+    position: relative;
+}
+
+header nav ul li .dropdown a:hover{
+    background-color: #1a712a;
+    color: white;
+}
+header nav ul li .dropdown li:last-of-type a:after{
+    content: '';
+    display: block;
+    width: 7px;
+    height: 10px;
+    position: absolute;
+    right: 17px;
+    top: 12px;
+    background-image: url('../images/arrow-header.svg');
+}
+
+header nav ul li .dropdown a:hover:after{
+    background-image: url('../images/arrow-header_hover.svg') !important;
+}
+
+header nav ul li.drop:hover .dropdown{
+    display: block;
+}
+
+header nav ul li .right-menu{
+    display: none;
+}
+
+header nav ul li .right-menu a:after{
+    background-image: none !important;
+}
+
+header nav ul li .right-menu a:hover:after{
+    background-image: none !important;
+}
+
+header nav ul li:last-of-type{
+    position: relative;
+}
+
+header nav ul li:last-of-type:hover .right-menu {
+    display: block;
+    position: absolute;
+    right: -210px;
+    top: -110px;
+}
+
+
+
 
 header .login{
     box-sizing: border-box;
@@ -261,7 +359,7 @@ a,p{
     display: none;
     justify-content: space-between;
     position: absolute;
-    top: 245px;
+    top: 270px;
     left: 70px;
 }
 
@@ -405,8 +503,7 @@ p{
 
 .container-promotion .button{
     border-radius: 6px;
-    width: 140px;
-    height: 40px;
+    padding: 11px 28px;
     background: #46a358;
     display: flex;
     justify-content: center;
@@ -508,6 +605,11 @@ p{
     font-size: 18px;
     line-height: 89%;
     color: #3d3d3d;
+}
+
+.product img{
+    height: 300px;
+    width: 258px;
 }
 
 
