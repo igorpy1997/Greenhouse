@@ -1,0 +1,154 @@
+// layout/_header.scss
+@use 'sass:color';
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/extensions' as ext;
+
+header {
+  margin-bottom: 12px;
+  padding-top: 30px;
+
+  .container-header {
+    @include mix.container;
+    @include mix.flex;
+  }
+
+  nav {
+    ul {
+      @include mix.flex;
+      gap: 50px;
+
+      li {
+        position: relative;
+
+        a {
+          font-weight: vars.$font-normal;
+          font-size: vars.$fs-medium;
+          color: vars.$dark-text;
+          position: relative;
+
+          &:before {
+            content: '';
+            display: block;
+            background: vars.$primary-color;
+            height: 2px;
+            width: 0;
+            position: absolute;
+            bottom: -25px;
+            transition: vars.$transition-normal;
+          }
+
+          &:hover {
+            color: vars.$primary-color;
+
+            &:before {
+              width: 100%;
+            }
+          }
+        }
+
+        &.drop:hover .dropdown {
+          display: block;
+        }
+
+        &:last-of-type {
+          position: relative;
+
+          &:hover .right-menu {
+            display: block;
+            position: absolute;
+            right: -210px;
+            top: -110px;
+          }
+        }
+
+        .dropdown {
+          display: none;
+          position: absolute;
+          top: 10px;
+          padding-top: 30px;
+          left: -50px;
+
+          a {
+            padding: 8px 14px;
+            min-width: 188px;
+            display: inline-block;
+            background: #edf6ee;
+            font-weight: vars.$font-normal;
+            font-size: vars.$fs-medium;
+            color: vars.$dark-text;
+            line-height: 20px;
+            transition: vars.$transition-normal;
+            position: relative;
+
+            &:before {
+              display: none;
+            }
+
+            &:hover {
+              background-color: color.adjust(vars.$primary-color, $lightness: -10%);
+              color: vars.$white;
+            }
+          }
+
+          li:last-of-type a:after {
+            content: '';
+            display: block;
+            width: 7px;
+            height: 10px;
+            position: absolute;
+            right: 17px;
+            top: 12px;
+            background-image: url('../images/arrow-header.svg');
+            transition: vars.$transition-normal;
+          }
+
+          a:hover:after {
+            background-image: url('../images/arrow-header_hover.svg') !important;
+          }
+        }
+
+        .right-menu {
+          display: none;
+
+          a:after {
+            background-image: none !important;
+            transition: vars.$transition-normal;
+          }
+
+          a:hover:after {
+            background-image: none !important;
+          }
+        }
+      }
+    }
+  }
+
+  .login {
+    box-sizing: border-box;
+    background: vars.$primary-color;
+    border-radius: vars.$border-radius;
+    width: 100px;
+    height: 35px;
+    padding: 7px 17px;
+    @include mix.flex;
+    text-decoration: none;
+    font-weight: vars.$font-medium;
+    font-size: vars.$fs-medium;
+    color: vars.$white;
+    transition: vars.$transition-normal;
+
+    svg path {
+      transition: vars.$transition-normal;
+    }
+
+    &:hover {
+      background-color: vars.$white;
+      color: vars.$primary-color;
+
+      svg path {
+        stroke: vars.$primary-color;
+      }
+    }
+  }
+}

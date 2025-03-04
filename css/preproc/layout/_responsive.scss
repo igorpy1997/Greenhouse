@@ -1,0 +1,96 @@
+// layout/_responsive.scss
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/mixins-adaptive' as adapt;
+
+// Адаптив для мобильных устройств
+@include adapt.mobile {
+  header {
+    nav {
+      margin-left: 0;
+      display: none;
+
+      ul {
+        gap: 10px;
+      }
+    }
+
+    .container-header {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+
+  .container-banner {
+    display: block !important;
+  }
+
+  .banner-img {
+    max-width: 507px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .products {
+    display: block;
+  }
+
+  .categories {
+    width: 100%;
+    align-items: center;
+  }
+
+  .container-plants {
+    width: 100%;
+    align-items: center;
+  }
+
+  .product {
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+// Адаптив для планшетов
+@include adapt.tablet {
+  header {
+    nav {
+      ul {
+        gap: 25px;
+      }
+    }
+
+    .container-header {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+
+  .container-plants {
+    gap: 30px;
+  }
+
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .product {
+    width: calc(50% - 10px);
+  }
+}
+
+// Можно также использовать произвольные точки
+@include adapt.breakpoint(768px) {
+  .blog-posts {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .container-promotion {
+    width: 100%;
+  }
+}

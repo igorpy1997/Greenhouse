@@ -1,0 +1,92 @@
+// layout/_products.scss
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mix;
+
+.products {
+  @include mix.flex;
+  flex-wrap: wrap;
+  row-gap: 70px;
+  width: 840px;
+}
+
+.product {
+  width: 258px;
+  @include mix.flex(flex-start, flex-start, column);
+  border-top: 1px solid transparent;
+  position: relative;
+  transition: vars.$transition-normal;
+
+  img {
+    height: 300px;
+    width: 258px;
+  }
+
+  &:hover {
+    border-top: 1px solid vars.$primary-color;
+
+    .product-icons {
+      display: flex;
+    }
+  }
+
+  &-icons {
+    display: none;
+    justify-content: space-between;
+    position: absolute;
+    top: 270px;
+    left: 70px;
+
+    ul {
+      @include mix.flex;
+      gap: 27px;
+
+      li a {
+        transition: vars.$transition-normal;
+
+        &:hover svg path {
+          cursor: pointer;
+          stroke: vars.$primary-color;
+          transition: fill 0.3s ease, stroke 0.3s ease;
+        }
+      }
+    }
+  }
+
+  &-info {
+    padding-top: 12px;
+    @include mix.flex(space-between, flex-start, column);
+    gap: 6px;
+
+    .price {
+      font-family: vars.$main-font;
+      font-weight: vars.$font-bold;
+      font-size: vars.$fs-xl;
+      line-height: 89%;
+      color: vars.$primary-color;
+      margin: 0;
+      text-align: start;
+    }
+  }
+
+  &-name {
+    margin: 0;
+    text-align: start;
+  }
+}
+
+.discount-info {
+  @include mix.flex(center, center);
+  width: 80px;
+  height: 29px;
+  background: vars.$primary-color;
+  position: absolute;
+  left: 0;
+  top: 10px;
+
+  p {
+    font-weight: vars.$font-medium;
+    font-size: vars.$fs-medium;
+    line-height: 100%;
+    color: vars.$white;
+  }
+}

@@ -1,0 +1,51 @@
+@media only screen and (max-width: 600px) {
+    header nav {
+        margin-left: 0;
+    }
+    header nav ul {
+        gap:10px;
+    }
+    header nav{
+        display: none;
+    }
+    .container-header{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .container-banner{
+        display: block !important;
+    }
+
+    .banner-img{
+        max-width: 507px;
+
+    }
+    .banner-img img{
+        width: 100%;
+    }
+    .products{
+        display: block;
+    }
+    .categories{
+        width: 100%;
+        align-items: center;
+    }
+    .container-plants{
+        width: 100%;
+        align-items: center;
+    }
+    .product{
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+
+}
+@media only screen and (max-width: 360px) {
+
+}
+@media only screen and (max-width: 320px) {
+
+}

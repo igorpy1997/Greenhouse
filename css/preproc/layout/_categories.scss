@@ -1,0 +1,83 @@
+// layout/_categories.scss
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mix;
+
+.container-plants {
+  @include mix.container;
+  @include mix.flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-bottom: 219px;
+}
+
+.main-content {
+  width: 840px;
+  @include mix.flex(space-between, center, column);
+
+  &-header {
+    @include mix.flex;
+    width: 838px;
+  }
+}
+
+.section-nav {
+  @include mix.flex;
+
+  ul {
+    @include mix.flex;
+    gap: 37px;
+
+    li a:hover {
+      color: vars.$primary-color;
+      border-bottom: 2px solid vars.$primary-color;
+    }
+  }
+}
+
+.categories {
+  background-color: vars.$light-bg;
+  width: 310px;
+
+  img {
+    height: 470px;
+  }
+
+  &-list {
+    list-style: none;
+    margin-left: 15px;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-bottom: 25px;
+      transition: vars.$transition-normal;
+
+      a:hover {
+        color: vars.$primary-color;
+      }
+    }
+
+    img {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.category-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 372px;
+  padding: 7px 0 0 18px;
+
+  h2 {
+    margin: 0;
+    font-family: vars.$main-font;
+    font-weight: vars.$font-bold;
+    font-size: vars.$fs-xl;
+    line-height: 89%;
+    color: vars.$dark-text;
+    margin-bottom: 25px;
+  }
+}

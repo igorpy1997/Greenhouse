@@ -1,0 +1,39 @@
+// abstracts/_variables.scss
+// No imports needed here - this is the base variables file
+
+// Colors
+$primary-color: #46A358;
+$dark-text: #3D3D3D;
+$light-text: #727272;
+$placeholder-text: #ACACAC;
+$white: #fff;
+$light-bg: #FBFBFB;
+$border-color: rgba(70, 163, 88, 0.1);
+$grey-bg: #F5F5F5;
+$pagination-border: #E5E5E5;
+
+// Typography
+$main-font: 'cera_proregular';
+
+// Font weights
+$font-normal: 400;
+$font-medium: 500;
+$font-bold: 700;
+$font-black: 900;
+
+// Font sizes
+$fs-small: 14px;
+$fs-regular: 15px;
+$fs-medium: 16px;
+$fs-large: 17px;
+$fs-xl: 18px;
+$fs-xxl: 70px;
+
+// Container widths
+$container-width: 1200px;
+
+// Border radius
+$border-radius: 6px;
+
+// Transitions
+$transition-normal: 0.4s;

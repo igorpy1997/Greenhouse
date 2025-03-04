@@ -1,0 +1,43 @@
+// layout/_pagination.scss
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mix;
+
+.pagination-container {
+  max-width: vars.$container-width;
+  margin-left: auto;
+}
+
+.pagination {
+  @include mix.flex;
+  gap: 10px;
+
+  li {
+    @include mix.flex(center, center);
+    border: 1px solid vars.$pagination-border;
+    border-radius: 4px;
+    width: 35px;
+    height: 35px;
+    transition: vars.$transition-normal;
+
+    &:hover {
+      background: vars.$primary-color;
+      cursor: pointer;
+
+      a {
+        color: vars.$white;
+      }
+
+      .icon path {
+        stroke: vars.$white;
+        transition: fill 0.3s ease, stroke 0.3s ease;
+      }
+    }
+
+    a {
+      font-weight: 300;
+      font-size: vars.$fs-xl;
+      line-height: 89%;
+      color: vars.$dark-text;
+    }
+  }
+}

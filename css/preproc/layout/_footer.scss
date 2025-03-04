@@ -1,0 +1,49 @@
+// layout/_footer.scss
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mix;
+
+.footer-main-container {
+  @include mix.container;
+  @include mix.flex;
+  gap: 130px;
+  padding: 33px 155px 38px 25px;
+  background: vars.$light-bg;
+  border-bottom: 1px solid vars.$border-color;
+  margin-bottom: 8px;
+}
+
+footer {
+  h3:nth-of-type(1) {
+    @include mix.heading(vars.$fs-xl, vars.$font-bold);
+    margin-bottom: 20px;
+  }
+
+  h3:nth-of-type(2) {
+    margin-bottom: 13px;
+  }
+
+  li {
+    font-weight: vars.$font-normal;
+    font-size: vars.$fs-small;
+    line-height: 214%;
+    color: vars.$dark-text;
+  }
+}
+
+.social-media {
+  ul {
+    @include mix.flex;
+    gap: 10px;
+    margin-bottom: 33px;
+  }
+}
+
+.copyrigt {
+  display: block;
+  max-width: 257px;
+  margin: auto;
+  font-weight: vars.$font-normal;
+  font-size: vars.$fs-small;
+  line-height: 214%;
+  color: vars.$dark-text;
+}

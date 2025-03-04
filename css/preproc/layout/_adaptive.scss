@@ -1,0 +1,100 @@
+@use '../abstracts/mixins-adaptive' as adapt;
+@use '../abstracts/variables' as vars;
+
+// Стили для 600px
+@include adapt.mobile {
+  .container-banner{
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px 50px 16px;
+  }
+  .container-banner img{
+    display: none;
+    margin-bottom: 12px !important;
+  }
+  .container-banner article{
+    padding: 0;
+    max-width: 326px;
+    margin: auto;
+
+    h1{
+      font-size: 42px;
+    }
+    img{
+      display: block;
+      max-width: 230px;
+      margin: auto;
+    }
+    a{
+      display:block;
+      max-width: 140px;
+      margin: auto;
+    }
+  }
+  .categories{
+    display: none;
+  }
+  .container-plants{
+    max-width: 360px;
+  }
+  .main-content-header{
+    margin-bottom: 32px;
+  }
+  .main-content{
+    align-items: flex-start;
+  }
+  .products{
+
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: start !important;
+    max-width: 360px;
+    justify-content: flex-start;
+    gap: 24px;
+    .banner-from-category{
+      display: block;
+      max-width: 310px;
+      margin: auto;
+    }
+    .product:last-child {
+      justify-self: start; // Только последний элемент выравнивается по левому краю
+      margin-left: 0; // Убираем левый отступ
+    }
+  }
+  .product{
+    max-width: 152px;
+    img{
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-fit: contain;
+      object-position: center;
+      margin-bottom: 12px !important;
+    }
+  }
+  .product-icons {
+    top: 120px; // Сбрасываем top
+    bottom: 10px; // Располагаем внизу
+    left: 55%; // Центрируем по горизонтали
+    transform: translateX(-50%); // Точное центрирование
+    width: 80%; // Задаем ширину в процентах от контейнера
+  }
+  .blog{
+    max-width: 360px;
+    margin: auto;
+    margin-bottom: 48px;
+    .container-promotion{
+      margin-bottom: 20px;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px 20px 20px 20px;
+    }
+    .container-promotion img{
+
+    }
+  }
+  .prefooter{
+    margin-top:50px;
+  }
+
+}

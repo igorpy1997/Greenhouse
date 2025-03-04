@@ -1,0 +1,42 @@
+// abstracts/_extensions.scss
+@use 'variables' as vars;
+
+// Common extension for card styles
+%card {
+  background: vars.$light-bg;
+  padding: 20px;
+}
+
+// List reset extension
+%list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// Text truncation
+%text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Hover underline effect
+%hover-underline {
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    background: vars.$primary-color;
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: -25px;
+    transition: vars.$transition-normal;
+  }
+
+  &:hover:before {
+    width: 100%;
+  }
+}

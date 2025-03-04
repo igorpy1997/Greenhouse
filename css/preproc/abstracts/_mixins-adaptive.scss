@@ -1,0 +1,28 @@
+// abstracts/_mixins-adaptive.scss
+@use 'variables' as vars;
+
+// Миксины для медиа-запросов
+@mixin mobile {
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: 601px) and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 993px) {
+    @content;
+  }
+}
+
+// Миксин для произвольной точки
+@mixin breakpoint($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}

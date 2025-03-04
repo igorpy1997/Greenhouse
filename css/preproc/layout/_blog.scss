@@ -1,0 +1,131 @@
+// layout/_blog.scss
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mix;
+
+.blog {
+  @include mix.container;
+  @include mix.flex;
+  flex-wrap: wrap;
+  row-gap: 138px;
+  margin-bottom: 100px;
+
+  &-posts {
+    @include mix.flex;
+    gap: 44px;
+
+    &-container {
+      width: 100%;
+      height: 447px;
+      @include mix.flex(center, center, column);
+      row-gap: 15px;
+
+      p {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &-post {
+    img, h2 {
+      margin: 0;
+    }
+
+    p {
+      margin-bottom: 0;
+      text-align: start;
+    }
+
+    &__content {
+      padding: 9px 12px 12px 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 4px;
+    }
+
+    .button {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      margin-top: 5px;
+      transition: vars.$transition-normal;
+
+      &:hover {
+        color: vars.$primary-color;
+      }
+
+      a {
+        font-weight: vars.$font-medium;
+        font-size: vars.$fs-small;
+        line-height: 114%;
+        color: vars.$dark-text;
+      }
+    }
+
+    h2 {
+      text-align: start;
+    }
+  }
+}
+
+.container-promotion {
+  width: 586px;
+  height: 302px;
+  background: vars.$light-bg;
+  @include mix.flex;
+
+  h2 {
+    margin: 0;
+    display: block;
+    width: 150px;
+    text-align: right;
+  }
+
+  .promo-content {
+    padding: 37px 30px 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    max-width: 400px;
+    row-gap: 14px;
+    a {
+      text-decoration: none;
+      font-weight: vars.$font-medium;
+      font-size: vars.$fs-small;
+      line-height: 143%;
+      color: vars.$white;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-family: vars.$main-font;
+    font-weight: vars.$font-normal;
+    font-size: vars.$fs-small;
+    line-height: 171%;
+    text-align: right;
+    color: vars.$light-text;
+  }
+
+  .button {
+    border-radius: vars.$border-radius;
+    padding: 11px 28px;
+    background: vars.$primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2px;
+    transition: 0.5s;
+
+    &:hover {
+      background: vars.$white;
+      color: vars.$primary-color;
+    }
+
+  }
+}
+
+.date-post {
+  color: vars.$primary-color;
+}

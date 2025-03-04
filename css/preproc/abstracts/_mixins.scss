@@ -1,0 +1,69 @@
+// abstracts/_mixins.scss
+@use 'sass:color';
+@use 'variables' as vars;
+
+// Container mixin
+@mixin container {
+  max-width: vars.$container-width;
+  margin: auto;
+}
+
+// Flex layout mixins
+@mixin flex($justify: space-between, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+// Button mixin
+@mixin button($bg: vars.$primary-color, $color: vars.$white, $padding: 11px 26px) {
+  background: $bg;
+  color: $color;
+  border-radius: vars.$border-radius;
+  padding: $padding;
+  transition: vars.$transition-normal;
+  text-decoration: none;
+  font-family: vars.$main-font;
+
+  &:hover {
+    background: vars.$white;
+    color: vars.$primary-color;
+  }
+}
+
+// Typography mixins
+@mixin heading($size: vars.$fs-xl, $weight: vars.$font-bold, $color: vars.$dark-text) {
+  font-family: vars.$main-font;
+  font-weight: $weight;
+  font-size: $size;
+  color: $color;
+  margin: 0;
+}
+
+@mixin text($size: vars.$fs-small, $weight: vars.$font-normal, $color: vars.$light-text, $align: start) {
+  font-family: vars.$main-font;
+  font-weight: $weight;
+  font-size: $size;
+  color: $color;
+  text-align: $align;
+  line-height: 171%;
+  margin: 0;
+}
+
+// Link mixin
+@mixin link($color: vars.$dark-text, $hover-color: vars.$primary-color) {
+  text-decoration: none;
+  font-family: vars.$main-font;
+  color: $color;
+  transition: vars.$transition-normal;
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+// Color adjustment mixin (to replace deprecated darken function)
+@mixin darken-color($color, $percentage) {
+  background-color: color.adjust($color, $lightness: -$percentage);
+}
