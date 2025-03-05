@@ -484,20 +484,42 @@
         z-index: 50 !important;
     }
 
-    .cd-header{
+    .header-wrapper.container-header {
+        width: 100%; /* Используем всю доступную ширину */
+        max-width: 1200px; /* Ограничиваем максимальную ширину */
+        margin: 0 auto; /* Центрируем контейнер */
         display: flex;
-        justify-content: center;
-
+        justify-content: space-between; /* Логотип слева, логин справа */
+        align-items: center;
+        padding: 0 20px; /* Добавляем отступы по бокам */
+        box-sizing: border-box; /* Включаем padding в расчет ширины */
+        height: auto; /* Позволяем высоте адаптироваться к содержимому */
+        min-height: 60px; /* Минимальная высота для контейнера */
+        position: relative; /* Для корректного позиционирования */
+        overflow: visible; /* Позволяем выпадающим меню быть видимыми */
     }
-    .container-header{
-        max-width: 430px !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        gap: 25px;
 
+    /* Стили для логотипа */
+    .header-wrapper.container-header a[href="index.html"] {
+        display: block;
+        /* Если нужно, ограничьте ширину логотипа */
+        max-width: 200px;
+        flex-shrink: 0; /* Запрещаем логотипу сжиматься */
+    }
 
-        margin-bottom: 20px !important;
-        padding: 0 !important;
+    /* Стили для главной навигации */
+    .header-wrapper.container-header .nav {
+        display: flex;
+        align-items: center;
+        margin-left: auto; /* Прижимаем навигацию вправо */
+        flex-shrink: 0; /* Запрещаем навигации сжиматься */
+    }
+
+    /* Для мобильных устройств */
+    @media only screen and (max-width: 768px) {
+        .header-wrapper.container-header {
+            flex-wrap: wrap; /* Разрешаем перенос на новую строку на маленьких экранах */
+        }
     }
 
 }
