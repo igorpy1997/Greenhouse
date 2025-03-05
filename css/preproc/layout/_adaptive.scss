@@ -36,6 +36,7 @@
   }
   .container-plants{
     max-width: 360px;
+    margin-bottom: 80px;
   }
   .main-content-header{
     margin-bottom: 32px;
@@ -79,22 +80,117 @@
     transform: translateX(-50%); // Точное центрирование
     width: 80%; // Задаем ширину в процентах от контейнера
   }
+  .pagination-container{
+    max-width: 215px;
+    margin:0 auto;
+  }
+  .pagination{
+
+  }
   .blog{
     max-width: 360px;
     margin: auto;
-    margin-bottom: 48px;
+    row-gap: 80px;
     .container-promotion{
-      margin-bottom: 20px;
       flex-direction: column;
       justify-content: center;
-      padding: 20px 20px 20px 20px;
+      padding: 20px 42px 20px 42px;
+
+    }
+    .container-promotion:nth-child(2){
+      display: none;
+    }
+    .promo-content{
+      align-items: center;
+      padding: 32px 4px 39px 4px;
+      p{
+        margin-bottom: 24px;
+        text-align: center;
+      }
+      a{
+
+      }
     }
     .container-promotion img{
 
     }
   }
+
+  .blog-post:not(:first-child) {
+    display: none;
+  }
+
+  .blog{
+
+    margin-bottom: 40px;
+
+  }
   .prefooter{
-    margin-top:50px;
+    max-width: 360px;
+    margin: auto;
+    .prefooter-promo{
+      flex-direction: column;
+      background: white;
+      .promo-card{
+        order: 2;
+        max-width: 204px;
+        margin: auto;
+        border-top: 1px solid rgba(70, 163, 88, 0.1);
+        border-right: none;
+        margin-bottom: 16px;
+        text-align: center;
+        h3, img{
+          margin: 0;
+          margin-bottom: 16px;
+        }
+        p{
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      .promo-newsletter{
+        max-width: 360px;
+        margin: auto;
+        order: 1;
+        padding: 25px 25px 25px 25px;
+        .newsletter-form{
+          input{
+            max-width: 228px;
+          }
+          button{
+            max-width: 72px;
+            padding: 12px 20px 12px 20px;
+          }
+        }
+      }
+    }
+    .contacts{
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      .adress, .contact-email, .phone_number{
+        max-width: 170px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+    }
+  }
+  .footer-main-container{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    max-width: 360px;
+    flex-wrap: wrap;
+    background-color: white;
+    padding: 40px 40px 40px 40px;
+  }
+
+  .nav-but-wrap{
+    display: inline-block !important;
   }
 
 }

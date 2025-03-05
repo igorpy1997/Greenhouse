@@ -115,6 +115,9 @@
     align-items: center;
     column-gap: 2px;
     transition: 0.5s;
+    img{
+      width: auto;
+    }
 
     &:hover {
       background: vars.$white;
@@ -126,4 +129,49 @@
 
 .date-post {
   color: vars.$primary-color;
+}
+
+.owl-nav {
+  display: block !important; /* Принудительное отображение навигации */
+}
+
+.owl-dots {
+  display: block !important; /* Принудительное отображение точек */
+  text-align: center;
+}
+
+/* Стили для кнопок навигации */
+.owl-nav button.owl-prev,
+.owl-nav button.owl-next {
+  width: 40px;
+  height: 40px;
+  background: #fff !important;
+  color: #333 !important;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.owl-nav button.owl-prev {
+  left: -20px;
+}
+
+.owl-nav button.owl-next {
+  right: -20px;
+}
+
+/* Стили для точек */
+.owl-dots .owl-dot span {
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  background: #ccc;
+  display: block;
+  border-radius: 50%;
+}
+
+.owl-dots .owl-dot.active span {
+  background: #46A358; /* Активная точка */
 }

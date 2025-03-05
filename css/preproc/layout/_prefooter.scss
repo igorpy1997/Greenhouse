@@ -141,7 +141,7 @@
   background-image: url(/images/email-icon.svg);
 }
 
-.phone_number {
+.phone_number::before {
   background-image: url(/images/phone-number-icon.png);
   background-repeat: no-repeat;
 }

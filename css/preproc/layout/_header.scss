@@ -7,6 +7,10 @@
 header {
   margin-bottom: 12px;
   padding-top: 30px;
+  a{
+    position: relative;
+    z-index: 100;
+  }
 
   .container-header {
     @include mix.container;
@@ -57,7 +61,7 @@ header {
           &:hover .right-menu {
             display: block;
             position: absolute;
-            right: -210px;
+            right: -190px;
             top: -110px;
           }
         }
@@ -82,7 +86,7 @@ header {
             position: relative;
 
             &:before {
-              display: none;
+              display: none !important;
             }
 
             &:hover {
@@ -99,12 +103,13 @@ header {
             position: absolute;
             right: 17px;
             top: 12px;
-            background-image: url('../images/arrow-header.svg');
+            background-image: url('../../../images/arrow-header.svg');
             transition: vars.$transition-normal;
           }
 
           a:hover:after {
-            background-image: url('../images/arrow-header_hover.svg') !important;
+
+            background-image: url('../../../images/arrow-header_hover.svg') !important;
           }
         }
 
@@ -122,6 +127,10 @@ header {
         }
       }
     }
+  }
+
+  .nav-but-wrap{
+    display: none;
   }
 
   .login {
@@ -151,4 +160,5 @@ header {
       }
     }
   }
+
 }

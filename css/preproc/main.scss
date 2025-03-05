@@ -23,6 +23,7 @@
 
 // Layout components
 
+@use 'layout/preloader';
 @use 'layout/header';
 @use 'layout/banner';
 @use 'layout/categories';
@@ -33,8 +34,11 @@
 @use 'layout/prefooter';
 @use 'layout/footer';
 
+
 @use 'layout/adaptive';
 @use 'layout/responsive';
+
+
 
 
 

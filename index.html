@@ -6,41 +6,73 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GreenShop</title>
+    <link rel="icon" href="images/Vector.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.default.css">
+
+    <link rel="stylesheet" href="css/mob_menu.css">
+
+
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+
+
   </head>
   <body>
-    <header>
-      <div class="container-header">
-        <a href="#">
+    <div class="preloader">
+      <div class="preloader-content">
+        <!-- SVG как изображение -->
+        <img src="images/Logo.svg" alt="Logo" class="animated-logo">
+
+        <!-- Полоса загрузки с CSS анимацией -->
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <header class="cd-header">
+      <div class="header-wrapper container-header">
+        <a href="index.html">
           <img src="images/Logo.svg" alt="logo">
         </a>
-        <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Shop</a></li>
-            <li class = "drop">
-              <a href="#">Plant Care</a>
-              <ul class="dropdown">
-                <li><a href="#">Drainage</a></li>
-                <li><a href="#">Health</a></li>
-                <li><a href="#">Fungicides</a></li>
-                <li><a href="#">Fertilizer</a></li>
-                <li>
-                  <a href="#">Priming</a>
-                  <ul class="right-menu">
-                    <li><a href="#">Universal</a></li>
-                    <li><a href="#">For Ficus</a></li>
-                    <li><a href="#">For Cacti</a></li>
-                    <li><a href="#">For Citrus</a></li>
-                    <li><a href="#">For those in bloom</a></li>
-                    <li><a href="#">For Orchids</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#">Blogs</a></li>
-          </ul>
+        <nav class="nav">
+          <div class="nav__content">
+            <ul class="nav__list">
+              <li class="nav__list-item active-nav"><a href="#" class="hover-target">Home</a></li>
+              <li class="nav__list-item"><a href="#" class="hover-target">Shop</a></li>
+              <li class="nav__list-item drop">
+                <a href="#" class="hover-target">Plant Care</a>
+                <ul class="dropdown">
+                  <li><a href="#">Drainage</a></li>
+                  <li><a href="#">Health</a></li>
+                  <li><a href="#">Fungicides</a></li>
+                  <li><a href="#">Fertilizer</a></li>
+                  <li>
+                    <a href="#">Priming</a>
+                    <ul class="right-menu">
+                      <li><a href="#">Universal</a></li>
+                      <li><a href="#">For Ficus</a></li>
+                      <li><a href="#">For Cacti</a></li>
+                      <li><a href="#">For Citrus</a></li>
+                      <li><a href="#">For those in bloom</a></li>
+                      <li><a href="#">For Orchids</a></li>
+                    </ul>
+                  </li>
+                </ul>
+
+              </li>
+              <li class="nav__list-item"><a href="#" class="hover-target">Blogs</a></li>
+            </ul>
+          </div>
         </nav>
         <a href="registration/registration.html" class="login">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,8 +82,68 @@
           </svg>
           Login
         </a>
+        <div class="nav-but-wrap">
+          <div class="menu-icon hover-target">
+            <span class="menu-icon__line menu-icon__line-left"></span>
+            <span class="menu-icon__line"></span>
+            <span class="menu-icon__line menu-icon__line-right"></span>
+          </div>
+        </div>
       </div>
     </header>
+
+
+
+
+
+
+
+
+
+
+
+<!--    <header>-->
+<!--      <div class="container-header">-->
+<!--        <a href="#">-->
+<!--          <img src="images/Logo.svg" alt="logo">-->
+<!--        </a>-->
+<!--        <nav>-->
+<!--          <ul>-->
+<!--            <li><a href="#">Home</a></li>-->
+<!--            <li><a href="#">Shop</a></li>-->
+<!--            <li class = "drop">-->
+<!--              <a href="#">Plant Care</a>-->
+<!--              <ul class="dropdown">-->
+<!--                <li><a href="#">Drainage</a></li>-->
+<!--                <li><a href="#">Health</a></li>-->
+<!--                <li><a href="#">Fungicides</a></li>-->
+<!--                <li><a href="#">Fertilizer</a></li>-->
+<!--                <li>-->
+<!--                  <a href="#">Priming</a>-->
+<!--                  <ul class="right-menu">-->
+<!--                    <li><a href="#">Universal</a></li>-->
+<!--                    <li><a href="#">For Ficus</a></li>-->
+<!--                    <li><a href="#">For Cacti</a></li>-->
+<!--                    <li><a href="#">For Citrus</a></li>-->
+<!--                    <li><a href="#">For those in bloom</a></li>-->
+<!--                    <li><a href="#">For Orchids</a></li>-->
+<!--                  </ul>-->
+<!--                </li>-->
+<!--              </ul>-->
+<!--            </li>-->
+<!--            <li><a href="#">Blogs</a></li>-->
+<!--          </ul>-->
+<!--        </nav>-->
+<!--        <a href="registration/registration.html" class="login">-->
+<!--          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--            <path d="M18.1601 10.1006H8.12598" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />-->
+<!--            <path d="M15.7212 7.67059L18.1612 10.1006L15.7212 12.5306" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />-->
+<!--            <path d="M13.6342 6.35826C13.3592 3.37493 12.2425 2.2916 7.80082 2.2916C1.88332 2.2916 1.88332 4.2166 1.88332 9.99993C1.88332 15.7833 1.88332 17.7083 7.80082 17.7083C12.2425 17.7083 13.3592 16.6249 13.6342 13.6416" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />-->
+<!--          </svg>-->
+<!--          Login-->
+<!--        </a>-->
+<!--      </div>-->
+<!--    </header>-->
     <main>
       <section class="banner">
         <div class="container-banner">
@@ -480,41 +572,48 @@
                       stroke-linecap="round"
                       stroke-linejoin="round" />
               </svg>
+            </a>
           </ul>
 
         </div>
       </section>
+
+
+
       <section class="blog">
-        <div class="container-promotion">
-          <img src="images/image 14.png"/>
-          <div class="promo-content">
-            <h2>
-              Summer cactus
-              & succulents
-            </h2>
-            <p>
-              We are an online plant shop offering a wide range of cheap and trendy plants
-            </p>
-            <a href="#" class="button">
-              Find more
-              <img src="images/Arrow - Right.png" height="18" width="18"/></a>
+        <div class="promotions owl-carousel owl-carousel-promo">
+          <div class="container-promotion">
+            <img src="images/image 14.png"/>
+            <div class="promo-content">
+              <h2>
+                Summer cactus
+                & succulents
+              </h2>
+              <p>
+                We are an online plant shop offering a wide range of cheap and trendy plants
+              </p>
+              <a href="#" class="button">
+                Find more
+                <img src="images/Arrow - Right.png" height="18" width="18"/></a>
+            </div>
+          </div>
+          <div class="container-promotion">
+            <img src="images/image 15.png" />
+            <div class="promo-content">
+              <h2>
+                Styling Trends
+                & much more
+              </h2>
+              <p>
+                We are an online plant shop offering a wide range of cheap and trendy plants
+              </p>
+              <a href = "#" class="button">
+                Find more
+                <img src="images/Arrow - Right.png" height="18" width="18"/></a>
+            </div>
           </div>
         </div>
-        <div class="container-promotion">
-          <img src="images/image 15.png" />
-          <div class="promo-content">
-            <h2>
-              Styling Trends
-              & much more
-            </h2>
-            <p>
-              We are an online plant shop offering a wide range of cheap and trendy plants
-            </p>
-            <a href = "#" class="button">
-              Find more
-              <img src="images/Arrow - Right.png" height="18" width="18"/></a>
-          </div>
-        </div>
+
         <div class="blog-posts-container">
           <h2 class="blog-posts__title">
             Our Blog Posts
@@ -522,7 +621,7 @@
           <p>
             We are an online plant shop offering a wide range of cheap and trendy plants.
           </p>
-          <div class="blog-posts">
+          <div class="blog-posts owl-carousel owl-carousel-blog-posts">
             <article class="blog-post">
               <img src="images/01.png" height="196" width="268"/>
               <div class="blog-post__content">
@@ -793,5 +892,18 @@
         2021 GreenShop. All Rights Reserved.
       </p>
     </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous">
+    </script>
+    <script src="js/owl.carousel.js"></script>
+
+
+    <script src="js/scripts.js"></script>
+
+
+
   </body>
 </html>

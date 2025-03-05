@@ -1,0 +1,118 @@
+/* Прелоадер занимает весь экран */
+.preloader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  /* Анимация исчезновения через некоторое время */
+  animation: fadeOut 0.5s ease-out forwards;
+  animation-delay: 0.5s; /* Время отображения прелоадера */
+}
+
+/* Анимация затухания */
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% {
+    opacity: 0;
+    visibility: hidden; /* Скрываем элемент полностью */
+  }
+}
+
+.preloader-content {
+  text-align: center;
+}
+
+/* Анимация SVG логотипа */
+#logo-svg {
+  animation: logo-animation 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes logo-animation {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* SVG анимация пути (эффект рисования) */
+#logo-svg path {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: path-animation 2s linear infinite;
+}
+
+@keyframes path-animation {
+  0% { stroke-dashoffset: 300; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* Полоса загрузки */
+.progress-bar {
+  margin-top: 20px;
+  width: 200px;
+  height: 4px;
+  background-color: #eee;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background-color: #46A358;
+
+  /* Анимация прогресса */
+  animation: progress-animation 3s ease-in-out forwards;
+}
+
+@keyframes progress-animation {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* Скрываем контент до завершения прелоадера */
+.content {
+  opacity: 0;
+  animation: showContent 0.5s ease-in forwards;
+  animation-delay: 3s; /* Должно совпадать с задержкой fadeOut прелоадера */
+}
+
+@keyframes showContent {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+#logo-svg #element1 {
+  animation: fadeIn 0.5s ease-in-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+#logo-svg #element2 {
+  animation: fadeIn 0.5s ease-in-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+#logo-svg #element3 {
+  animation: fadeIn 0.5s ease-in-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

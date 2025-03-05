@@ -6,14 +6,6 @@
 // Адаптив для мобильных устройств
 @include adapt.mobile {
   header {
-    nav {
-      margin-left: 0;
-      display: none;
-
-      ul {
-        gap: 10px;
-      }
-    }
 
     .container-header {
       padding-right: 15px;

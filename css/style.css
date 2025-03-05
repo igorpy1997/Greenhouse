@@ -1,3 +1,4 @@
+@charset "UTF-8";
 ul {
   list-style: none;
   padding: 0;
@@ -148,9 +149,141 @@ input {
   font-weight: normal;
   font-style: normal;
 }
+/* Прелоадер занимает весь экран */
+.preloader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  /* Анимация исчезновения через некоторое время */
+  animation: fadeOut 0.5s ease-out forwards;
+  animation-delay: 0.5s; /* Время отображения прелоадера */
+}
+
+/* Анимация затухания */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden; /* Скрываем элемент полностью */
+  }
+}
+.preloader-content {
+  text-align: center;
+}
+
+/* Анимация SVG логотипа */
+#logo-svg {
+  animation: logo-animation 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes logo-animation {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+/* SVG анимация пути (эффект рисования) */
+#logo-svg path {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: path-animation 2s linear infinite;
+}
+
+@keyframes path-animation {
+  0% {
+    stroke-dashoffset: 300;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+/* Полоса загрузки */
+.progress-bar {
+  margin-top: 20px;
+  width: 200px;
+  height: 4px;
+  background-color: #eee;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background-color: #46A358;
+  /* Анимация прогресса */
+  animation: progress-animation 3s ease-in-out forwards;
+}
+
+@keyframes progress-animation {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+/* Скрываем контент до завершения прелоадера */
+.content {
+  opacity: 0;
+  animation: showContent 0.5s ease-in forwards;
+  animation-delay: 3s; /* Должно совпадать с задержкой fadeOut прелоадера */
+}
+
+@keyframes showContent {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#logo-svg #element1 {
+  animation: fadeIn 0.5s ease-in-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+#logo-svg #element2 {
+  animation: fadeIn 0.5s ease-in-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+#logo-svg #element3 {
+  animation: fadeIn 0.5s ease-in-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 header {
   margin-bottom: 12px;
   padding-top: 30px;
+}
+header a {
+  position: relative;
+  z-index: 100;
 }
 header .container-header {
   max-width: 1200px;
@@ -201,7 +334,7 @@ header nav ul li:last-of-type {
 header nav ul li:last-of-type:hover .right-menu {
   display: block;
   position: absolute;
-  right: -210px;
+  right: -190px;
   top: -110px;
 }
 header nav ul li .dropdown {
@@ -224,7 +357,7 @@ header nav ul li .dropdown a {
   position: relative;
 }
 header nav ul li .dropdown a:before {
-  display: none;
+  display: none !important;
 }
 header nav ul li .dropdown a:hover {
   background-color: rgb(54.678111588, 127.321888412, 68.7381974249);
@@ -238,11 +371,11 @@ header nav ul li .dropdown li:last-of-type a:after {
   position: absolute;
   right: 17px;
   top: 12px;
-  background-image: url("../images/arrow-header.svg");
+  background-image: url("../../../images/arrow-header.svg");
   transition: 0.4s;
 }
 header nav ul li .dropdown a:hover:after {
-  background-image: url("../images/arrow-header_hover.svg") !important;
+  background-image: url("../../../images/arrow-header_hover.svg") !important;
 }
 header nav ul li .right-menu {
   display: none;
@@ -253,6 +386,9 @@ header nav ul li .right-menu a:after {
 }
 header nav ul li .right-menu a:hover:after {
   background-image: none !important;
+}
+header .nav-but-wrap {
+  display: none;
 }
 header .login {
   box-sizing: border-box;
@@ -544,7 +680,6 @@ header .login:hover svg path {
 }
 .blog-posts-container {
   width: 100%;
-  height: 447px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -590,7 +725,6 @@ header .login:hover svg path {
 
 .container-promotion {
   width: 586px;
-  height: 302px;
   background: #FBFBFB;
   display: flex;
   justify-content: space-between;
@@ -638,6 +772,9 @@ header .login:hover svg path {
   column-gap: 2px;
   transition: 0.5s;
 }
+.container-promotion .button img {
+  width: auto;
+}
 .container-promotion .button:hover {
   background: #fff;
   color: #46A358;
@@ -645,6 +782,51 @@ header .login:hover svg path {
 
 .date-post {
   color: #46A358;
+}
+
+.owl-nav {
+  display: block !important; /* Принудительное отображение навигации */
+}
+
+.owl-dots {
+  display: block !important; /* Принудительное отображение точек */
+  text-align: center;
+}
+
+/* Стили для кнопок навигации */
+.owl-nav button.owl-prev,
+.owl-nav button.owl-next {
+  width: 40px;
+  height: 40px;
+  background: #fff !important;
+  color: #333 !important;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.owl-nav button.owl-prev {
+  left: -20px;
+}
+
+.owl-nav button.owl-next {
+  right: -20px;
+}
+
+/* Стили для точек */
+.owl-dots .owl-dot span {
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  background: #ccc;
+  display: block;
+  border-radius: 50%;
+}
+
+.owl-dots .owl-dot.active span {
+  background: #46A358; /* Активная точка */
 }
 
 .products .banner-from-category {
@@ -833,7 +1015,7 @@ header .login:hover svg path {
   background-image: url(/images/email-icon.svg);
 }
 
-.phone_number {
+.phone_number::before {
   background-image: url(/images/phone-number-icon.png);
   background-repeat: no-repeat;
 }
@@ -922,6 +1104,7 @@ footer li {
   }
   .container-plants {
     max-width: 360px;
+    margin-bottom: 80px;
   }
   .main-content-header {
     margin-bottom: 32px;
@@ -964,29 +1147,102 @@ footer li {
     transform: translateX(-50%);
     width: 80%;
   }
+  .pagination-container {
+    max-width: 215px;
+    margin: 0 auto;
+  }
   .blog {
     max-width: 360px;
     margin: auto;
-    margin-bottom: 48px;
+    row-gap: 80px;
   }
   .blog .container-promotion {
-    margin-bottom: 20px;
     flex-direction: column;
     justify-content: center;
-    padding: 20px 20px 20px 20px;
+    padding: 20px 42px 20px 42px;
+  }
+  .blog .container-promotion:nth-child(2) {
+    display: none;
+  }
+  .blog .promo-content {
+    align-items: center;
+    padding: 32px 4px 39px 4px;
+  }
+  .blog .promo-content p {
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .blog-post:not(:first-child) {
+    display: none;
+  }
+  .blog {
+    margin-bottom: 40px;
   }
   .prefooter {
-    margin-top: 50px;
+    max-width: 360px;
+    margin: auto;
+  }
+  .prefooter .prefooter-promo {
+    flex-direction: column;
+    background: white;
+  }
+  .prefooter .prefooter-promo .promo-card {
+    order: 2;
+    max-width: 204px;
+    margin: auto;
+    border-top: 1px solid rgba(70, 163, 88, 0.1);
+    border-right: none;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .prefooter .prefooter-promo .promo-card h3, .prefooter .prefooter-promo .promo-card img {
+    margin: 0;
+    margin-bottom: 16px;
+  }
+  .prefooter .prefooter-promo .promo-card p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .prefooter .prefooter-promo .promo-newsletter {
+    max-width: 360px;
+    margin: auto;
+    order: 1;
+    padding: 25px 25px 25px 25px;
+  }
+  .prefooter .prefooter-promo .promo-newsletter .newsletter-form input {
+    max-width: 228px;
+  }
+  .prefooter .prefooter-promo .promo-newsletter .newsletter-form button {
+    max-width: 72px;
+    padding: 12px 20px 12px 20px;
+  }
+  .prefooter .contacts {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .prefooter .contacts .adress, .prefooter .contacts .contact-email, .prefooter .contacts .phone_number {
+    max-width: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-main-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    max-width: 360px;
+    flex-wrap: wrap;
+    background-color: white;
+    padding: 40px 40px 40px 40px;
+  }
+  .nav-but-wrap {
+    display: inline-block !important;
   }
 }
 @media only screen and (max-width: 600px) {
-  header nav {
-    margin-left: 0;
-    display: none;
-  }
-  header nav ul {
-    gap: 10px;
-  }
   header .container-header {
     padding-right: 15px;
     padding-left: 15px;
