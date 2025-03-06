@@ -10,15 +10,15 @@
   margin-bottom: 219px;
 }
 
-.main-content {
-  width: 840px;
-  @include mix.flex(space-between, center, column);
-
-  &-header {
-    @include mix.flex;
-    width: 838px;
-  }
-}
+////.main-content {
+////  width: 840px;
+////  @include mix.flex(space-between, center, column);
+////
+////  &-header {
+////    @include mix.flex;
+////    width: 838px;
+////  }
+//}
 
 .section-nav {
   @include mix.flex;
@@ -36,7 +36,7 @@
 
 .categories {
   background-color: vars.$light-bg;
-  width: 310px;
+  //width: 310px;
 
   img {
     height: 470px;
